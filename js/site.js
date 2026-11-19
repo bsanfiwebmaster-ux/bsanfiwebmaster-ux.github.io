@@ -152,7 +152,9 @@
       var btn = $('button[type=submit]', form); btn.disabled = true;
       var ep = form.getAttribute('data-endpoint');
       if (ep) { /* servicio externo de formularios (JSON) */
-        w.fetch(ep, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        var fd = new FormData(form), tp = $('input[type=radio]:checked', form), nm = $('#f-name').value.trim();
+        if (tp) fd.set('subject', 'Web: ' + tp.value + ' \u00b7 ' + nm); /* asunto: tema y nombre */
+        w.fetch(ep, { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd })
           .then(function (r) { return r.json(); })
           .then(function (j) { if (!j || !j.success) throw new Error('x'); w.location.href = form.getAttribute('data-sent'); })
           .catch(function () { btn.disabled = false; setErr('consent', msgs.fail); });
