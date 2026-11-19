@@ -1,0 +1,13 @@
+/*
+  TEMA DE COLOR (única fuente de colores de la web)
+  Tema actual: portada de Pianofonía (bronce sobre marrón oscuro).
+  Con cada lanzamiento nuevo se editan estos valores (ver LEEME.md).
+  Reglas: base oscura; texto principal sobre fondo 7:1 o más; textos secundarios 4,5:1 o más; acento 3:1 o más.
+*/
+:root{
+  --bg:#1B1714; --panel:#231E1A; --panel2:#26211D; --ph:#2A2420;
+  --tx:#EFE5D8; --tx2:#DDD1C3; --tx3:#D4C8BA; --tx4:#BFB2A3; --tx5:#A99C8D; --tx6:#8E8274; --tx7:#6F655A;
+  --hi:#FFF4E8; --ac:#B59681; --ac2:#F2C5A2; --warn:#E0AE80;
+  /* mismos colores en R,G,B para transparencias */
+  --bg-rgb:27,23,20; --tx-rgb:239,229,216; --ac-rgb:181,150,129; --ac2-rgb:242,197,162;
+}
